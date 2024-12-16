@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title%}
+
+{% block body %}
+<div class="container my-3">
+    <h2>csv_bot</h2>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <!-- <div class="mb-3">
+            <label for="title" class="form-label">Todo Title</label>
+            <input type="text" class="form-control" name="title" id="title" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Todo Description</label>
+            <input type="text" class="form-control" name="desc" id="desc">
+        </div> -->
+
+        <!-- File Upload Option -->
+        <div class="mb-3">
+            <label for="csvFile" class="form-label">Upload CSV</label>
+            <input type="file" class="form-control" name="csvFile" id="csvFile" accept=".csv">
+        </div>
+
+        <!-- User Question -->
+        <div class="mb-3">
+            <label for="user_question" class="form-label">Ask a Question</label>
+            <input type="text" class="form-control" name="user_question" id="user_question" placeholder="E.g., What is the total revenue?">
+        </div>
+
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+</div>
+
+{% if result %}
+<div class="container my-3">
+    <h3>Response:</h3>
+    <p>{{ result }}</p>
+</div>
+{% endif %}
+
+{% endblock body %}
